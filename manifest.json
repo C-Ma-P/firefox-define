@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Define",
+  "version": "0.3.0",
+  "description": "Right-click selected text to show its Wiktionary definition in a small popup.",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://en.wiktionary.org/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "define@local",
+      "strict_min_version": "128.0"
+    }
+  },
+  "commands": {
+    "define-selection": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F"
+      },
+      "description": "Define the selected word or phrase"
+    }
+  }
+}
