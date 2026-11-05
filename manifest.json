@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Define",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Right-click selected text to show its Wiktionary definition in a small popup.",
   "permissions": [
     "contextMenus",
@@ -19,7 +19,12 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "define@local",
-      "strict_min_version": "128.0"
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "websiteContent"
+        ]
+      }
     }
   },
   "commands": {
@@ -29,5 +34,11 @@
       },
       "description": "Define the selected word or phrase"
     }
+  },
+  "icons": {
+    "16": "icons/wiktionary.svg",
+    "32": "icons/wiktionary.svg",
+    "48": "icons/wiktionary.svg",
+    "96": "icons/wiktionary.svg"
   }
 }

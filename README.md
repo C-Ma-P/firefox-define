@@ -1,4 +1,4 @@
-# Define — Firefox extension prototype
+# Define — Firefox extension
 
 A deliberately tiny Firefox extension:
 
@@ -37,7 +37,7 @@ The ZIP/XPI is unsigned. Normal Firefox release builds require an add-on to be s
 - `activeTab` + `scripting`: injects the popup only after you explicitly click **Define**.
 - `https://en.wiktionary.org/*`: fetches the selected term's definition.
 
-No browsing history or selected text is stored by the extension.
+The selected word or phrase is sent to en.wiktionary.org only when you invoke Define, because that is required to retrieve the definition. The extension does not store it.
 
 ## Data source
 
@@ -56,3 +56,12 @@ Firefox lets users change extension shortcuts from **Add-ons and themes → Mana
 ## Context-menu separator
 
 Firefox WebExtensions do not let a single top-level extension item be preceded by an extension-owned separator without also creating a second menu item; Firefox then collapses the extension items into a submenu. The prototype therefore keeps **Define** as the single top-level row rather than introducing a redundant submenu.
+
+
+## Signing
+
+This package is prepared for Mozilla unlisted/self-distributed signing. It declares the required `websiteContent` data transmission because the selected text is sent to Wiktionary for lookup.
+
+## Icon
+
+The extension manifest includes a compact Wiktionary-style icon, which Firefox also uses for the top-level context-menu item.
